@@ -1,4 +1,5 @@
 var SimpleImap = require('simple-imap');
+var pwm = require('pwm');
 
 var options = {
     user: 'eugeniebastille@gmail.com',
@@ -8,6 +9,15 @@ var options = {
     tls: true,
     mailbox: 'INBOX'
 };
+
+var pwm5 = pwm.export(0, 5, function() {
+    console.log("Ready!");
+});
+
+// Enable pin
+pwm5.setEnable(1, function() {
+    console.log("Enabled!");
+});
 
 var simpleImap = new SimpleImap(options);
 
