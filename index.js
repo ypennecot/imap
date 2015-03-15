@@ -16,7 +16,7 @@ simpleImap.on('error', function(err) {
 });
 
 simpleImap.on('mail', function(mail) {
-    console.log(mail);
+    console.log('coucou');
 });
 
 simpleImap.start();
